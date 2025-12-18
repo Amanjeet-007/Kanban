@@ -1,0 +1,225 @@
+:root {
+    --primary-color: black;
+    --pmin-color: rgb(62, 60, 60);
+    --sec-color: white;
+    --delete-color: red;
+    --success-color: green;
+    --process-color: purple;
+    /* size */
+    --mid-size: 25px;
+    /* space */
+    --side-gap: 20px 40px;
+    /* font */
+    --default-font: Verdana, Geneva, Tahoma, sans-serif;
+    /* corner */
+    --small-corner: 4px;
+    --mid-corner: 10px;
+    --circle-corner: 50%;
+
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+main,
+html {
+    height: 100%;
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--primary-color);
+    color: var(--sec-color);
+    font-family: var(--default-font);
+}
+
+nav {
+    height: min-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: var(--side-gap);
+    font-size: var(--mid-size);
+}
+nav .logo{
+    font-weight: 600;
+}
+
+nav button {
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: var(--mid-corner);
+    border: 2px solid;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+}
+
+main .box {
+    margin: 10px;
+    width: 32vw;
+    border-radius: var(--mid-corner);
+    height: 85vh;
+    background-color: var(--pmin-color);
+    transition: .3s ease-in;
+    flex-wrap: wrap;
+    overflow: scroll;
+    position: relative;
+}
+main .drag{
+    border: 2px dotted white;
+    scale: 1.01;
+}
+main .box .top {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px 20px;
+}
+
+main .box .top p {
+    font-weight: 600;
+}
+
+main .box .top .count p {
+    width: 80px;
+    font-weight: 500;
+}
+section{
+    display: flex;
+    flex-direction: row;
+}
+.task {
+    border-radius: var(--small-corner);
+    width: 90%;
+    height: min-content;
+    background-color: var(--primary-color);
+    padding: var(--side-gap);
+    position: relative;
+    cursor: grabbing;
+    margin: 7px auto;
+}
+
+.task .name {
+    font-size: 20px;
+    margin: 5px 0px;
+    font-weight: 600;
+}
+
+.task .about {
+    color: var(--pmin-color);
+    margin: 5px;
+    width: 90%;
+}
+
+.task .button {
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+.task .button .edit{
+    background-color: var(--process-color);
+    color: var(--sec-color);
+
+}
+.task .button button {
+    cursor: pointer;
+    margin: 14px 5px;
+    color: var(--sec-color);
+    border: 1px solid ;
+    padding: 5px 10px;
+    background-color: var(--delete-color);
+    border-radius: var(--small-corner);
+}
+.AddNewTask{
+    width: 100vw;
+    height: 100vh;
+    background: #4b4a4a75;
+    position: absolute;
+    top: 0px; 
+    backdrop-filter: blur(2px);   
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+}
+ .form{
+    display: none;
+    flex-direction: column;
+    width: 400px;
+    height: min-content;
+    align-items: center;
+    padding: 56px;
+    background-color: var(--primary-color);
+    border-radius: var(--mid-corner);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.showAddNewTask{
+    display: flex;
+}
+.form input , .form textarea{
+    width: 80%;
+    min-height: 30px;
+    margin: 10px;
+    padding:5px ;
+    border-radius: var(--small-corner);
+    font-size: 20px;
+}
+.form button{
+    padding: 7px 25px;
+    margin: 5px;
+    background-color: var(--primary-color)
+    ;
+    border: 4px solid var(--sec-color);
+    font-size: 18px;
+    color: var(--sec-color);
+    transition: .4s;
+    cursor: pointer;
+}
+
+.form button:hover{
+    background:var(--pmin-color);
+}
+
+.form select{
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: var(--sec-color);
+    font-size: 18px;
+    border: 0px;
+}
+
+@media (max-width:1000px) {
+    body , html{
+         overflow-y: visible;
+    }
+    main{
+        flex-direction: column;
+    }
+     section{
+        display: flex;
+     }
+   #list{
+    width: 47vw;
+    height: 55vh;
+   }
+   #process{
+    width: 47vw;
+    height: 55vh;
+   }
+   #Done{
+    width: 97vw;
+    height: 40vw;
+   }
+}

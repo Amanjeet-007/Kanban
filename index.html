@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kanban</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">Kanban</div>
+            <button class="add">Add New Task</button>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div class="list box" id="list" >
+            <div class="top">
+                <p>Todo</p>
+                <div class="count"><p>Count <span>0</span></p></div>
+            
+            
+            
+            </div>
+
+            <div draggable="true" class="task" id="0" >
+                <div class="name">
+                    Task 1
+                </div>
+                <div class="about">
+                    Discribtioin on the Todo Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                </div>
+                <div class="button">
+                    <button class="edit">Edit</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+ 
+            <div class="task" draggable="true" id="1">
+                <div class="name">
+                    Task 2
+                </div>
+                <div class="about">
+                    Discribtioin on the Todo Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                    Discribtioin on the Todo
+                </div>
+                <div class="button">
+                    <button class="edit">Edit</button>
+                    <button>Delete</button>
+                </div>
+            </div>
+
+        </div>
+        <div class="process box" id="process">
+             <div class="top"><p>In Progress</p>
+                <div class="count"><p>Count <span>0</span></p></div>
+            </div>
+
+        </div> 
+        </section>
+       
+        <div class="Done box" id="Done">
+            <div class="top">
+            <p>Done</p>
+            <div class="count"><p>Count <span>0</span></p></div>
+            </div>
+
+        </div>
+    </main>
+    <div class="AddNewTask">
+      
+    </div>
+     <div class="form">
+        Task
+        <input type="text" placeholder="Task Name" id="name">
+        About
+        <textarea name="about" id="about" placeholder="About"></textarea>
+        <button onclick='createTodo()'>Add Task</button>
+        <select name="state" id="">
+            <option value="Todo" selected > Todo</option>
+            <option value="Progress"> Progress</option>
+            <option value="Done"> Done</option>
+        </select>
+       </div>
+    <footer>
+
+    </footer>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
