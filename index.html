@@ -15,64 +15,28 @@
             <button class="add">Add New Task</button>
         </nav>
     </header>
+    
     <main>
         <section>
-            <div class="list box" id="list" >
+            <div class="list box" id="Todo" data-state="Todo" >
             <div class="top">
                 <p>Todo</p>
-                <div class="count"><p>Count <span>0</span></p></div>
-            
-            
-            
-            </div>
-
-            <div draggable="true" class="task" id="0" >
-                <div class="name">
-                    Task 1
-                </div>
-                <div class="about">
-                    Discribtioin on the Todo Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                </div>
-                <div class="button">
-                    <button class="edit">Edit</button>
-                    <button>Delete</button>
-                </div>
-            </div>
- 
-            <div class="task" draggable="true" id="1">
-                <div class="name">
-                    Task 2
-                </div>
-                <div class="about">
-                    Discribtioin on the Todo Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                    Discribtioin on the Todo
-                </div>
-                <div class="button">
-                    <button class="edit">Edit</button>
-                    <button>Delete</button>
-                </div>
+                <div class="count"><p>Count <span id="todoCount">0</span></p></div>
             </div>
 
         </div>
-        <div class="process box" id="process">
+        <div class="process box" id="Process"  data-state="Progress">
              <div class="top"><p>In Progress</p>
-                <div class="count"><p>Count <span>0</span></p></div>
+                <div class="count"><p>Count <span id="progressCount">0</span></p></div>
             </div>
 
         </div> 
         </section>
-       
-        <div class="Done box" id="Done">
+
+        <div class="Done box" id="Done" data-state="Done">
             <div class="top">
             <p>Done</p>
-            <div class="count"><p>Count <span>0</span></p></div>
+            <div class="count"><p>Count <span id="doneCount">0</span></p></div>
             </div>
 
         </div>

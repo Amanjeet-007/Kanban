@@ -34,6 +34,10 @@ html {
     font-family: var(--default-font);
 }
 
+::-webkit-scrollbar {
+    width: 0px;
+}
+
 nav {
     height: min-content;
     width: 100%;
@@ -42,7 +46,8 @@ nav {
     padding: var(--side-gap);
     font-size: var(--mid-size);
 }
-nav .logo{
+
+nav .logo {
     font-weight: 600;
 }
 
@@ -52,6 +57,7 @@ nav button {
     font-weight: 600;
     border-radius: var(--mid-corner);
     border: 2px solid;
+    cursor: pointer;
 }
 
 main {
@@ -70,10 +76,12 @@ main .box {
     overflow: scroll;
     position: relative;
 }
-main .drag{
+
+main .drag {
     border: 2px dotted white;
     scale: 1.01;
 }
+
 main .box .top {
     display: flex;
     width: 100%;
@@ -89,10 +97,12 @@ main .box .top .count p {
     width: 80px;
     font-weight: 500;
 }
-section{
+
+section {
     display: flex;
     flex-direction: row;
 }
+
 .task {
     border-radius: var(--small-corner);
     width: 90%;
@@ -119,39 +129,45 @@ section{
 .task .button {
     position: absolute;
     bottom: 0px;
-    right: 0px;
+    right: 10px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 100%;
 }
-.task .button .edit{
-    background-color: var(--process-color);
-    color: var(--sec-color);
 
+.task .button svg {
+    height: 20px;
 }
+
 .task .button button {
     cursor: pointer;
-    margin: 14px 5px;
+    transition: .3s;
+    margin: auto;
     color: var(--sec-color);
-    border: 1px solid ;
     padding: 5px 10px;
-    background-color: var(--delete-color);
+    border: 0px;
+    background-color: var(--primary-color);
     border-radius: var(--small-corner);
 }
-.AddNewTask{
+.task .button button:hover{
+    background-color: var(--pmin-color);
+}
+
+.AddNewTask {
     width: 100vw;
     height: 100vh;
     background: #4b4a4a75;
     position: absolute;
-    top: 0px; 
-    backdrop-filter: blur(2px);   
+    top: 0px;
+    backdrop-filter: blur(2px);
     display: none;
     /* display: flex; */
     align-items: center;
     justify-content: center;
 }
- .form{
+
+.form {
     display: none;
     flex-direction: column;
     width: 400px;
@@ -163,24 +179,27 @@ section{
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
-.showAddNewTask{
+
+.showAddNewTask {
     display: flex;
 }
-.form input , .form textarea{
+
+.form input,
+.form textarea {
     width: 80%;
     min-height: 30px;
     margin: 10px;
-    padding:5px ;
+    padding: 5px;
     border-radius: var(--small-corner);
     font-size: 20px;
 }
-.form button{
+
+.form button {
     padding: 7px 25px;
     margin: 5px;
-    background-color: var(--primary-color)
-    ;
+    background-color: var(--primary-color);
     border: 4px solid var(--sec-color);
     font-size: 18px;
     color: var(--sec-color);
@@ -188,11 +207,11 @@ section{
     cursor: pointer;
 }
 
-.form button:hover{
-    background:var(--pmin-color);
+.form button:hover {
+    background: var(--pmin-color);
 }
 
-.form select{
+.form select {
     margin-top: 20px;
     background-color: var(--primary-color);
     color: var(--sec-color);
@@ -201,25 +220,29 @@ section{
 }
 
 @media (max-width:1000px) {
-    body , html{
-         overflow-y: visible;
+    body,
+    html {
+        overflow-y: visible;
     }
-    main{
+    main {
         flex-direction: column;
     }
-     section{
+    section {
         display: flex;
-     }
-   #list{
-    width: 47vw;
-    height: 55vh;
-   }
-   #process{
-    width: 47vw;
-    height: 55vh;
-   }
-   #Done{
-    width: 97vw;
-    height: 40vw;
-   }
+    }
+    .about {
+        display: none;
+    }
+    #Todo {
+        width: 47vw;
+        height: 55vh;
+    }
+    #Process {
+        width: 47vw;
+        height: 55vh;
+    }
+    #Done {
+        width: 97vw;
+        height: 40vw;
+    }
 }
