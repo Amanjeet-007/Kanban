@@ -102,6 +102,9 @@ section {
     display: flex;
     flex-direction: row;
 }
+.asd{
+    display:grid;
+}
 
 .task {
     border-radius: var(--small-corner);
